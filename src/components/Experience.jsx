@@ -26,8 +26,14 @@ export function Experience() {
                 <span className="timeline-dot" />
                 <div className="timeline-period">{item.period}</div>
                 <h3>{item.title}</h3>
-                <div className="timeline-company">{item.company}</div>
-                <p>{item.description}</p>
+                <div className="timeline-company">
+                  {item.company} · {item.location}
+                </div>
+                <ul className="timeline-points">
+                  {item.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
                 {item.highlights?.length > 0 && (
                   <div className="highlights">
                     {item.highlights.map((h) => (
@@ -46,10 +52,17 @@ export function Experience() {
                 <GraduationCap size={20} /> Formation
               </h3>
               {education.map((edu) => (
-                <div key={edu.title}>
+                <div className="edu" key={edu.title}>
                   <div className="edu-period">{edu.period}</div>
                   <div className="edu-title">{edu.title}</div>
-                  <div className="edu-school">{edu.company}</div>
+                  <div className="edu-school">{edu.school}</div>
+                  <div className="tag-list edu-topics">
+                    {edu.topics.map((topic) => (
+                      <span className="tag" key={topic}>
+                        {topic}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               ))}
           </Reveal>

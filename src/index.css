@@ -737,35 +737,32 @@ section {
   margin-top: 6px;
 }
 
-.skill-row + .skill-row {
-  margin-top: 22px;
-}
-
-.skill-row-top {
+.skill-points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
-  justify-content: space-between;
-  font-size: 0.95rem;
-  font-weight: 500;
-  margin-bottom: 8px;
+  flex-direction: column;
+  gap: 14px;
 }
 
-.skill-row-top span:last-child {
-  color: var(--ink-muted);
-  font-variant-numeric: tabular-nums;
+.skill-points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--ink-soft);
 }
 
-.skill-track {
-  height: 8px;
-  border-radius: 999px;
-  background: var(--bg-subtle);
-  overflow: hidden;
-}
-
-.skill-fill {
-  height: 100%;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  transform-origin: 0 50%;
+.point-check {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--accent-2-soft);
+  color: var(--accent-2);
+  flex-shrink: 0;
+  margin-top: 1px;
 }
 
 .tools {
@@ -1006,6 +1003,49 @@ section {
   margin-bottom: 18px;
 }
 
+.edu + .edu {
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.edu-topics {
+  margin-top: 12px;
+}
+
+.edu-topics .tag {
+  font-size: 0.78rem;
+  padding: 3px 10px;
+}
+
+.timeline-points {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: var(--ink-soft);
+}
+
+.timeline-points li + li {
+  margin-top: 6px;
+}
+
+.timeline-points li::marker {
+  color: var(--accent);
+}
+
+.languages {
+  margin-top: 32px;
+}
+
+.languages strong {
+  color: var(--accent);
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+.frameworks {
+  margin-top: 40px;
+}
+
 .side-card .edu-period {
   font-size: 0.85rem;
   color: var(--accent);
@@ -1034,7 +1074,7 @@ section {
 /* ---------- Certifications ---------- */
 .cert-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 }
 
@@ -1127,8 +1167,14 @@ section {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+}
+
+@media (max-width: 1080px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .project-card {

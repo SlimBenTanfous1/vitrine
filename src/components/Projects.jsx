@@ -15,8 +15,8 @@ export function Projects() {
       <div className="container">
         <SectionHead
           eyebrow="Projets"
-          title="Réalisations & laboratoires"
-          lead="Une sélection de projets personnels et professionnels illustrant ma pratique de la sécurité."
+          title="Projets personnels"
+          lead="Des projets personnels pour expérimenter et approfondir : SOC, outillage open source et DevSecOps."
         />
 
         <Reveal className="filters">

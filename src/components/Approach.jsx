@@ -8,7 +8,7 @@ export function Approach() {
       <div className="container">
         <SectionHead
           eyebrow="Méthode"
-          title="Une démarche structurée, de l’analyse à l’amélioration continue."
+          title="Une démarche structurée, de l’audit à la supervision."
         />
         <div className="approach-grid">
           <motion.div

@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'motion/react'
-import { ArrowRight, ChevronDown, Download, Lock, MapPin, Network, Radar, ShieldCheck } from 'lucide-react'
+import { ArrowRight, ChevronDown, Download, GitBranch, Lock, MapPin, Radar, Server } from 'lucide-react'
 import { profile } from '../data/profile'
 import { GithubIcon, LinkedinIcon } from './Icon'
 import { ease } from './Reveal'
@@ -13,10 +13,10 @@ const titleWords = [
 ]
 
 const chips = [
-  { label: 'Pentest', icon: Radar, style: { top: '4%', left: '8%' }, alt: false, delay: 0 },
-  { label: 'Cloud Security', icon: Network, style: { top: '22%', right: '-4%' }, alt: true, delay: 0.8 },
-  { label: 'ISO 27001', icon: ShieldCheck, style: { bottom: '14%', left: '-6%' }, alt: true, delay: 1.6 },
-  { label: 'IAM & Zero Trust', icon: Lock, style: { bottom: '2%', right: '6%' }, alt: false, delay: 2.4 },
+  { label: 'SOC · Wazuh', icon: Radar, style: { top: '4%', left: '8%' }, alt: false, delay: 0 },
+  { label: 'DevSecOps', icon: GitBranch, style: { top: '22%', right: '-4%' }, alt: true, delay: 0.8 },
+  { label: 'Hardening', icon: Server, style: { bottom: '14%', left: '-6%' }, alt: true, delay: 1.6 },
+  { label: 'Zero Trust', icon: Lock, style: { bottom: '2%', right: '6%' }, alt: false, delay: 2.4 },
 ]
 
 function HeroVisual() {

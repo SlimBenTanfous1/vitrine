@@ -1,7 +1,7 @@
-import { Cloud, FileCheck2, KeyRound, Radar, ScanSearch, Shield, Workflow } from 'lucide-react'
+import { Cloud, Gauge, Network, Radar, ScanSearch, Shield, Workflow } from 'lucide-react'
 
 // Icônes utilisables depuis src/data/profile.js (ajoutez-en ici si besoin).
-const icons = { Cloud, FileCheck2, KeyRound, Radar, ScanSearch, Shield, Workflow }
+const icons = { Cloud, Gauge, Network, Radar, ScanSearch, Shield, Workflow }
 
 export function Icon({ name, size = 20, ...props }) {
   const Component = icons[name] ?? Shield

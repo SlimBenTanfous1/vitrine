@@ -36,8 +36,8 @@ export function Contact() {
           <div>
             <SectionHead
               eyebrow="Contact"
-              title="Parlons de la sécurité de votre projet."
-              lead="Audit, accompagnement ou opportunité professionnelle : je réponds généralement sous 48 heures."
+              title="Travaillons ensemble."
+              lead="Je recherche une alternance longue durée (Mastère Cybersécurité, ESGI Paris) à partir de septembre 2026, au rythme d’une semaine à l’école pour trois semaines en entreprise."
             />
             <div className="contact-list">
               <button className="contact-item" onClick={copyEmail}>

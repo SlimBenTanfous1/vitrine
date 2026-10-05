@@ -2,211 +2,226 @@
 // Modifiez ce fichier pour personnaliser le site sans toucher aux composants.
 
 export const profile = {
-  name: 'Prénom Nom',
-  initials: 'PN',
-  role: 'Ingénieur en cybersécurité',
+  name: 'Slim Ben Tanfous',
+  initials: 'SB',
+  role: 'Ingénieur Cybersécurité · DevSecOps · SOC',
   tagline:
-    'Je conçois, teste et renforce la sécurité des systèmes d’information — de l’audit technique à la gouvernance, avec une approche pragmatique et orientée risque.',
-  location: 'Tunis, Tunisie',
-  availability: 'Ouvert aux opportunités',
-  email: 'prenom.nom@example.com',
-  cvUrl: '#',
+    'Ingénieur informatique spécialisé en cybersécurité, avec une expérience terrain en hardening d’infrastructure de production, déploiement SOC et pipelines DevSecOps.',
+  location: 'Paris, France',
+  availability: 'Disponible pour une alternance — sept. 2026',
+  email: 'slimbentanfous2002@gmail.com',
+  cvUrl: '/cv-slim-ben-tanfous.pdf',
   socials: {
-    github: 'https://github.com/',
-    linkedin: 'https://www.linkedin.com/',
+    github: 'https://github.com/Slimbentanfous1',
+    linkedin: 'https://www.linkedin.com/in/slim-ben-tanfous-971b19244',
   },
   about: [
-    'Ingénieur en cybersécurité, j’accompagne les organisations dans la protection de leurs actifs numériques. Mon travail couvre l’évaluation des vulnérabilités, la sécurisation des architectures et la mise en conformité.',
-    'Je privilégie une sécurité lisible et mesurable : des recommandations priorisées, des contrôles automatisés et une documentation claire, pour que les équipes techniques et métiers avancent ensemble.',
+    'Ingénieur informatique spécialisé en cybersécurité, j’interviens sur toute la chaîne : durcissement d’infrastructures de production, supervision et détection (SOC), et intégration de la sécurité dans les pipelines CI/CD.',
+    'Certifié CCNA, CyberOps Associate et AWS Security, je poursuis un Mastère Cybersécurité à l’ESGI Paris et recherche une alternance longue durée, au rythme d’une semaine à l’école pour trois semaines en entreprise.',
   ],
+  // decimals : nombre de décimales affichées par le compteur animé
   stats: [
-    { value: 40, suffix: '+', label: 'Audits & tests d’intrusion' },
-    { value: 120, suffix: '+', label: 'Vulnérabilités remontées' },
-    { value: 8, suffix: '', label: 'Certifications' },
-    { value: 5, suffix: ' ans', label: 'D’expérience' },
+    { value: 0, suffix: '', label: 'Intrusion après le durcissement d’une infra de production' },
+    { value: 99.9, decimals: 1, suffix: ' %', label: 'De disponibilité lors d’une migration ESXi → Proxmox' },
+    { value: 6, suffix: '', label: 'Sources de logs centralisées dans Grafana' },
+    { value: 5, suffix: '', label: 'Outils de sécurité intégrés au CI/CD' },
+  ],
+  languages: [
+    { name: 'Français', level: 'C1' },
+    { name: 'Anglais', level: 'C1' },
+    { name: 'Allemand', level: 'A2' },
+    { name: 'Arabe', level: 'Natif' },
   ],
 }
 
-// icon : nom d’une icône lucide-react (voir src/components/Icon.jsx)
+// icon : nom d’une icône déclarée dans src/components/Icon.jsx
 export const skillDomains = [
   {
-    id: 'offensive',
-    title: 'Sécurité offensive',
-    icon: 'ScanSearch',
-    summary: 'Tests d’intrusion web, réseau et Active Directory, selon des méthodologies reconnues (OWASP, PTES).',
-    skills: [
-      { name: 'Pentest applicatif (OWASP Top 10)', level: 90 },
-      { name: 'Active Directory & Kerberos', level: 80 },
-      { name: 'Tests d’intrusion réseau', level: 85 },
-      { name: 'Revue de code sécurisée', level: 70 },
-    ],
-    tools: ['Burp Suite', 'Nmap', 'Metasploit', 'BloodHound', 'ffuf'],
-  },
-  {
-    id: 'defensive',
-    title: 'Détection & réponse',
+    id: 'soc',
+    title: 'SOC & détection',
     icon: 'Radar',
-    summary: 'Mise en place de la supervision, écriture de règles de détection et gestion des incidents.',
-    skills: [
-      { name: 'SIEM & corrélation', level: 85 },
-      { name: 'Réponse à incident', level: 80 },
-      { name: 'Threat hunting', level: 70 },
-      { name: 'Analyse forensique', level: 65 },
+    summary: 'Collecte, corrélation et réponse automatisée aux incidents avec une stack SOC open-source.',
+    points: [
+      'Déploiement d’un SOC complet : Wazuh, TheHive, Cortex et Shuffle SOAR',
+      'Détection réseau avec Suricata IDS',
+      'Cartographie des détections sur MITRE ATT&CK',
+      'Analyse de malware et réponse automatisée',
     ],
-    tools: ['Splunk', 'Elastic', 'Wazuh', 'Sigma', 'Velociraptor'],
+    tools: ['Wazuh', 'TheHive', 'Cortex', 'Shuffle', 'Suricata', 'MITRE ATT&CK', 'EDR'],
   },
   {
-    id: 'cloud',
-    title: 'Cloud & infrastructure',
-    icon: 'Cloud',
-    summary: 'Sécurisation d’environnements cloud et on-premise, durcissement et segmentation réseau.',
-    skills: [
-      { name: 'Sécurité AWS / Azure', level: 80 },
-      { name: 'Durcissement Linux & Windows', level: 85 },
-      { name: 'Segmentation & pare-feu', level: 80 },
-      { name: 'Conteneurs & Kubernetes', level: 70 },
+    id: 'audit',
+    title: 'Audit & tests de sécurité',
+    icon: 'ScanSearch',
+    summary: 'Audits de sécurité externes et tests applicatifs, avec rapport et plan de remédiation priorisé.',
+    points: [
+      'Audit externe complet : scan réseau, configuration TLS, énumération DNS, en-têtes HTTP',
+      'Tests applicatifs selon l’OWASP Top 10',
+      'Rédaction de rapports et priorisation des findings critiques',
+      'Évaluation des vulnérabilités (CVE / CVSS)',
     ],
-    tools: ['Terraform', 'Docker', 'Kubernetes', 'pfSense', 'CIS Benchmarks'],
+    tools: ['Burp Suite', 'Nmap', 'testssl.sh', 'OWASP ZAP', 'OWASP Top 10'],
   },
   {
-    id: 'grc',
-    title: 'Gouvernance & conformité',
-    icon: 'FileCheck2',
-    summary: 'Analyse de risques, politiques de sécurité et accompagnement vers la conformité.',
-    skills: [
-      { name: 'ISO 27001 / 27005', level: 85 },
-      { name: 'Analyse de risques (EBIOS RM)', level: 75 },
-      { name: 'RGPD', level: 70 },
-      { name: 'Sensibilisation des équipes', level: 90 },
+    id: 'network',
+    title: 'Réseau & hardening',
+    icon: 'Network',
+    summary: 'Durcissement des serveurs et segmentation réseau pour réduire la surface d’attaque.',
+    points: [
+      'Correction d’un bypass critique Docker / iptables en production',
+      'Migration de Fail2ban vers CrowdSec',
+      'Architecture Zero Trust avec Cloudflare Access',
+      'Segmentation VLAN, routage OSPF, VPN IPsec',
     ],
-    tools: ['ISO 27001', 'NIST CSF', 'EBIOS RM', 'RGPD', 'PCI DSS'],
+    tools: ['iptables', 'CrowdSec', 'Cloudflare Access', 'VLAN', 'OSPF', 'VPN / IPsec', 'TCP/IP'],
   },
   {
     id: 'devsecops',
-    title: 'DevSecOps & automatisation',
+    title: 'DevSecOps',
     icon: 'Workflow',
-    summary: 'Intégration de la sécurité dans les pipelines CI/CD et automatisation des contrôles.',
-    skills: [
-      { name: 'SAST / DAST / SCA', level: 80 },
-      { name: 'Scripting Python & Bash', level: 85 },
-      { name: 'Gestion des secrets', level: 75 },
-      { name: 'Infrastructure as Code', level: 70 },
+    summary: 'Intégration de contrôles de sécurité automatisés à chaque étape du pipeline CI/CD.',
+    points: [
+      'Analyse statique (SAST) avec SonarQube et Semgrep',
+      'Analyse dynamique (DAST) avec OWASP ZAP',
+      'Détection de secrets (Gitleaks) et scan d’images (Trivy, Hadolint)',
+      'Health checks automatisés après déploiement',
     ],
-    tools: ['GitLab CI', 'SonarQube', 'Trivy', 'Semgrep', 'Vault'],
+    tools: ['SonarQube', 'Semgrep', 'Trivy', 'Gitleaks', 'OWASP ZAP', 'Hadolint', 'Jenkins', 'GitHub Actions'],
   },
   {
-    id: 'crypto',
-    title: 'Identité & cryptographie',
-    icon: 'KeyRound',
-    summary: 'Gestion des identités et des accès, PKI et bonnes pratiques cryptographiques.',
-    skills: [
-      { name: 'IAM, SSO & MFA', level: 80 },
-      { name: 'PKI & certificats', level: 75 },
-      { name: 'Chiffrement & TLS', level: 80 },
-      { name: 'Zero Trust', level: 70 },
+    id: 'cloud',
+    title: 'Cloud & virtualisation',
+    icon: 'Cloud',
+    summary: 'Conception et migration d’infrastructures virtualisées haute disponibilité.',
+    points: [
+      'Migration VMware ESXi vers Proxmox VE (LXC, cluster HA)',
+      'Sauvegarde et reprise avec Veeam',
+      'Conteneurisation avec Docker',
+      'Fondamentaux sécurité AWS et OCI',
     ],
-    tools: ['Keycloak', 'Entra ID', 'OpenSSL', 'HashiCorp Vault'],
+    tools: ['Proxmox VE', 'VMware ESXi', 'Docker', 'Veeam', 'AWS', 'OCI'],
+  },
+  {
+    id: 'automation',
+    title: 'Supervision & automatisation',
+    icon: 'Gauge',
+    summary: 'Centralisation des logs, tableaux de bord et automatisation de l’administration.',
+    points: [
+      'Stack Loki + Promtail et dashboard Grafana unifié',
+      'Supervision d’infrastructure avec Zabbix',
+      'Application web d’administration des VM via API REST (quotas, RBAC)',
+      'Scripts d’automatisation en Python et Bash',
+    ],
+    tools: ['Grafana', 'Loki', 'Promtail', 'Zabbix', 'Python', 'Bash', 'API REST', 'Git'],
   },
 ]
 
 export const certifications = [
-  { name: 'OSCP', issuer: 'OffSec', year: '2024' },
-  { name: 'CEH', issuer: 'EC-Council', year: '2023' },
-  { name: 'ISO 27001 Lead Implementer', issuer: 'PECB', year: '2023' },
-  { name: 'AWS Security Specialty', issuer: 'Amazon Web Services', year: '2022' },
-  { name: 'CompTIA Security+', issuer: 'CompTIA', year: '2021' },
-  { name: 'eJPT', issuer: 'INE Security', year: '2021' },
+  { name: 'CCNA', issuer: 'Cisco' },
+  { name: 'CyberOps Associate', issuer: 'Cisco' },
+  { name: 'AWS Security Cloud Foundations', issuer: 'Amazon Web Services' },
+  { name: 'OCI Foundations Associate', issuer: 'Oracle' },
+]
+
+export const frameworks = [
+  'ISO 27001',
+  'NIST',
+  'EBIOS RM',
+  'OWASP Top 10',
+  'ANSSI',
+  'NIS2',
+  'CVE / CVSS',
+  'Digital Forensics',
 ]
 
 export const experience = [
   {
-    period: '2023 — Aujourd’hui',
-    title: 'Ingénieur sécurité senior',
-    company: 'Entreprise A',
-    description:
-      'Pilotage des tests d’intrusion et des audits de configuration pour des clients des secteurs bancaire et industriel. Encadrement de deux consultants juniors.',
-    highlights: ['30+ missions d’audit', 'Réduction de 60 % des vulnérabilités critiques'],
+    period: 'Fév. 2026 — Août 2026',
+    title: 'Ingénieur Infrastructure & Sécurité',
+    company: 'BrightByDesign',
+    location: 'Bruxelles, Belgique · Full remote',
+    points: [
+      'Réduit la surface d’attaque en corrigeant un bypass critique Docker / iptables et en migrant de Fail2ban vers CrowdSec.',
+      'Centralisé la supervision de 6 sources de logs dans un dashboard Grafana unifié (Loki + Promtail), réduisant le temps de détection des anomalies.',
+      'Livré un audit de sécurité externe complet (Nmap, testssl.sh, énumération DNS, en-têtes HTTP) avec rapport PDF et plan de remédiation priorisé.',
+      'Déployé une architecture Zero Trust (Cloudflare Access) et intégré 5 outils de sécurité au CI/CD (Semgrep, Hadolint, OWASP ZAP, health checks).',
+    ],
+    highlights: ['Zéro intrusion post-déploiement', '6 sources de logs centralisées', 'Zero Trust'],
   },
   {
-    period: '2021 — 2023',
-    title: 'Analyste SOC',
-    company: 'Entreprise B',
-    description:
-      'Supervision de la sécurité, qualification des alertes et réponse aux incidents. Conception de règles de détection alignées sur MITRE ATT&CK.',
-    highlights: ['80+ règles de détection', 'Temps de réponse divisé par deux'],
-  },
-  {
-    period: '2020 — 2021',
-    title: 'Stage de fin d’études — Sécurité cloud',
-    company: 'Entreprise C',
-    description:
-      'Audit de la posture de sécurité d’un environnement AWS et automatisation des contrôles de conformité.',
-    highlights: ['Contrôles CIS automatisés'],
+    period: 'Juin 2025 — Sept. 2025',
+    title: 'Ingénieur Virtualisation & Infrastructure',
+    company: 'BFI Groupe',
+    location: 'Tunis, Tunisie',
+    points: [
+      'Migré le parc VMware ESXi vers Proxmox VE (LXC, cluster HA, Veeam), éliminant les coûts de licence.',
+      'Automatisé la gestion des VM via API REST et une application web sur mesure (quotas, supervision, RBAC).',
+    ],
+    highlights: ['99,9 % de disponibilité', 'Administration : des heures → quelques minutes'],
   },
 ]
 
 export const education = [
   {
-    period: '2017 — 2020',
-    title: 'Diplôme d’ingénieur — Sécurité des systèmes',
-    company: 'École d’ingénieurs',
+    period: 'Sept. 2026 — Sept. 2028',
+    title: 'Mastère Cybersécurité',
+    school: 'ESGI Paris · Alternance (1 sem. école / 3 sem. entreprise)',
+    topics: ['Red Team', 'SOC', 'CTI', 'Malware Analysis', 'ISO 27001', 'EBIOS RM', 'NIS2', 'IAM', 'Cloud Security'],
+  },
+  {
+    period: 'Sept. 2021 — Août 2026',
+    title: 'Diplôme d’ingénieur informatique — Cybersécurité',
+    school: 'ESPRIT, Tunis',
+    topics: ['Analyse de malware', 'Audit sécurité', 'Digital Forensics', 'Systèmes & réseaux', 'CI/CD'],
   },
 ]
 
 export const projects = [
   {
-    title: 'Laboratoire Active Directory',
-    category: 'Offensive',
+    title: 'Murus Secure',
+    category: 'SOC',
     description:
-      'Environnement AD vulnérable automatisé (Terraform + Ansible) pour s’entraîner aux attaques Kerberos et documenter les contre-mesures.',
-    tags: ['Terraform', 'Ansible', 'Active Directory'],
-    link: '#',
+      'SOC de bout en bout : collecte, corrélation, analyse de malware et réponse automatisée, avec Wazuh, TheHive, Cortex, Shuffle SOAR et Suricata IDS.',
+    tags: ['Wazuh', 'TheHive', 'Cortex', 'Shuffle', 'Suricata'],
+    link: 'https://github.com/Slimbentanfous1',
+  },
+  {
+    title: 'Tessen',
+    category: 'Open source',
+    description:
+      'Scanner en ligne de commande des configurations MCP des clients IA : détection des serveurs non vérifiés et des permissions excessives. Plus de 42 tests et CI GitHub Actions.',
+    tags: ['Python', 'CLI', 'MCP', 'GitHub Actions'],
+    link: 'https://github.com/Slimbentanfous1',
   },
   {
     title: 'Pipeline DevSecOps',
     category: 'DevSecOps',
     description:
-      'Chaîne CI/CD intégrant SAST, analyse des dépendances et scan d’images, avec seuils de blocage configurables.',
-    tags: ['GitLab CI', 'Semgrep', 'Trivy'],
-    link: '#',
-  },
-  {
-    title: 'Règles de détection Sigma',
-    category: 'Défensive',
-    description:
-      'Collection de règles Sigma cartographiées sur MITRE ATT&CK, testées sur des jeux de logs d’attaques simulées.',
-    tags: ['Sigma', 'Elastic', 'MITRE ATT&CK'],
-    link: '#',
-  },
-  {
-    title: 'Outil d’audit de configuration',
-    category: 'Automatisation',
-    description:
-      'Script Python qui compare la configuration de serveurs Linux aux recommandations CIS et génère un rapport HTML.',
-    tags: ['Python', 'CIS', 'Reporting'],
-    link: '#',
+      'Pipeline CI/CD sécurisé (Jenkins + GitHub) couvrant SAST, DAST et détection de secrets : SonarQube, Trivy, Gitleaks et OWASP ZAP.',
+    tags: ['Jenkins', 'SonarQube', 'Trivy', 'Gitleaks', 'OWASP ZAP'],
+    link: 'https://github.com/Slimbentanfous1',
   },
 ]
 
 export const approach = [
   {
     step: '01',
-    title: 'Comprendre',
-    text: 'Cartographier le périmètre, les actifs critiques et les enjeux métier avant toute action.',
+    title: 'Auditer',
+    text: 'Cartographier l’exposition : scans, configuration TLS, DNS, en-têtes et services accessibles.',
   },
   {
     step: '02',
-    title: 'Évaluer',
-    text: 'Identifier les vulnérabilités et les scénarios de risque avec des méthodes reproductibles.',
+    title: 'Prioriser',
+    text: 'Classer les findings selon leur criticité (CVSS) et leur impact réel sur la production.',
   },
   {
     step: '03',
-    title: 'Prioriser',
-    text: 'Classer les constats selon leur impact réel pour concentrer l’effort là où il compte.',
+    title: 'Durcir',
+    text: 'Corriger, segmenter et appliquer le Zero Trust, puis automatiser les contrôles dans le CI/CD.',
   },
   {
     step: '04',
-    title: 'Renforcer',
-    text: 'Accompagner la remédiation, automatiser les contrôles et mesurer les progrès.',
+    title: 'Superviser',
+    text: 'Centraliser les logs, détecter les anomalies et répondre rapidement aux incidents.',
   },
 ]

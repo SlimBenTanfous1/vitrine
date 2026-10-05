@@ -1,7 +1,7 @@
 import { motion } from 'motion/react'
 import { BadgeCheck } from 'lucide-react'
-import { certifications } from '../data/profile'
-import { SectionHead, ease } from './Reveal'
+import { certifications, frameworks } from '../data/profile'
+import { Reveal, SectionHead, ease } from './Reveal'
 
 const container = {
   hidden: {},
@@ -19,7 +19,7 @@ export function Certifications() {
       <div className="container">
         <SectionHead
           eyebrow="Certifications"
-          title="Des compétences validées par des référentiels reconnus."
+          title="Certifications & référentiels"
         />
         <motion.div
           className="cert-grid"
@@ -42,12 +42,24 @@ export function Certifications() {
               <div>
                 <div className="cert-name">{cert.name}</div>
                 <div className="cert-meta">
-                  {cert.issuer} · {cert.year}
+                  {cert.issuer}
+                  {cert.year && ` · ${cert.year}`}
                 </div>
               </div>
             </motion.div>
           ))}
         </motion.div>
+
+        <Reveal delay={0.1} className="frameworks">
+          <div className="tools-label">Référentiels maîtrisés</div>
+          <div className="tag-list">
+            {frameworks.map((f) => (
+              <span className="tag" key={f}>
+                {f}
+              </span>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   )

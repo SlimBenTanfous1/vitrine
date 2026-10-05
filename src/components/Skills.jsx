@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
+import { Check } from 'lucide-react'
 import { skillDomains } from '../data/profile'
 import { Icon } from './Icon'
 import { Reveal, SectionHead, ease } from './Reveal'
@@ -23,30 +24,21 @@ function SkillPanel({ domain }) {
         </div>
       </div>
 
-      {domain.skills.map((skill, i) => (
-        <div className="skill-row" key={skill.name}>
-          <div className="skill-row-top">
-            <span>{skill.name}</span>
-            <span>{skill.level}%</span>
-          </div>
-          <div
-            className="skill-track"
-            role="progressbar"
-            aria-valuenow={skill.level}
-            aria-valuemin={0}
-            aria-valuemax={100}
-            aria-label={skill.name}
+      <ul className="skill-points">
+        {domain.points.map((point, i) => (
+          <motion.li
+            key={point}
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.45, delay: 0.1 + i * 0.07, ease }}
           >
-            <motion.div
-              className="skill-fill"
-              style={{ width: `${skill.level}%` }}
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 0.9, delay: 0.1 + i * 0.08, ease }}
-            />
-          </div>
-        </div>
-      ))}
+            <span className="point-check">
+              <Check size={14} strokeWidth={2.4} />
+            </span>
+            {point}
+          </motion.li>
+        ))}
+      </ul>
 
       <div className="tools">
         <div className="tools-label">Outils & référentiels</div>
@@ -77,8 +69,8 @@ export function Skills() {
       <div className="container">
         <SectionHead
           eyebrow="Compétences"
-          title="Six domaines, une vision globale de la sécurité."
-          lead="De l’attaque à la gouvernance : une expertise transverse pour comprendre les menaces et y répondre de façon adaptée."
+          title="Six domaines, de la détection au durcissement."
+          lead="Des compétences mises en pratique en production et en projets personnels, du SOC aux pipelines CI/CD."
         />
 
         <div className="skills-layout">
